@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Watch Now – Sportwave.xyz</title>
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, #001f4d 0%, #003366 100%);
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    /* Button group (TV + Discord) */
+    .button-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* TV button */
+    .tv-button {
+      background: #ffeb3b;
+      color: #003366;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .tv-button:hover {
+      transform: translateY(-2px) scale(1.03);
+      background: #ffd600;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .tv-button::after {
+      content: "Back to main menu";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .tv-button:hover::after {
+      opacity: 1;
+    }
+
+    /* Discord button */
+    .discord-button {
+      background: #7289DA; /* Discord blue */
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .discord-button:hover {
+      transform: translateY(-2px) scale(1.03);
+      background: #5b6eae;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .discord-button::after {
+      content: "Join our Discord";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .discord-button:hover::after {
+      opacity: 1;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ffeb3b;
+    }
+    h2.event-label {
+      font-size: 20px;
+      color: #ffd700;
+      margin-bottom: 40px;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .card {
+      width: 220px;
+      height: 180px;
+      border-radius: 20px;
+      background: #ffeb3b;
+      color: #003366;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      overflow: hidden;
+    }
+    .card:hover, .card:active {
+      transform: translateY(-5px) scale(1.03);
+      background: #ffd600;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+    .card h2 {
+      margin: 10px 0 0 0;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 0 5px;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+      .top-bar {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .button-group {
+        flex-direction: row; /* still side by side on small screens if space allows */
+        gap: 10px;
+      }
+      .logo {
+        width: 100px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2.event-label {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+      .cards {
+        gap: 15px;
+      }
+      .card {
+        width: 160px;
+        height: 150px;
+      }
+      .card img {
+        height: 80px;
+      }
+      .card h2 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="button-group">
+      <a href="https://www.sportwave.xyz/" class="tv-button">📺 Menu</a>
+      <a href="https://discord.gg/XvBhu9a6aQ" class="discord-button" target="_blank">💬 Discord</a>
+    </div>
+    <img src="Sportwave Logo.png" alt="Sportwave Logo" class="logo">
+  </div>
+
+  <h1>Watch Now</h1>
+  <h2 class="event-label">Club World Cup</h2>
+
+  <div class="cards" id="watchlist"></div>
+
+  <script>
+    const games = [
+      {id: 'game1', title: 'Team Alpha vs Team Beta', url: 'https://www.sportwave.xyz/game1'},
+      {id: 'game2', title: 'Team Gamma vs Team Delta', url: 'https://www.sportwave.xyz/game2'},
+      {id: 'game3', title: 'Team Epsilon vs Team Zeta', url: 'https://www.sportwave.xyz/game3'}
+    ];
+
+    const watchlistDiv = document.getElementById('watchlist');
+    const markedGames = JSON.parse(localStorage.getItem('markedGames') || '[]');
+
+    function renderWatchlist() {
+      watchlistDiv.innerHTML = '';
+      if(markedGames.length === 0) {
+        watchlistDiv.innerHTML = '<p>No games marked yet.</p>';
+        return;
+      }
+      markedGames.forEach(gameId => {
+        const game = games.find(g => g.id === gameId);
+        if(game) {
+          const card = document.createElement('a');
+          card.className = 'card';
+          card.href = game.url;
+          card.target = '_blank';
+          card.innerHTML = `
+            <img src="intro-back.png" alt="${game.title}">
+            <h2>${game.title}</h2>
+          `;
+          watchlistDiv.appendChild(card);
+        }
+      });
+    }
+
+    renderWatchlist();
+  </script>
+</body>
+</html>
